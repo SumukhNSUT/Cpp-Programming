@@ -25,14 +25,12 @@ int main()
     cout << endl;
 
     // Sorting the array (bubble sort)
-    // Using nested loops for repeated comparisons and swaps
     for (int i = 0; i < size - 1; i++)
     {
         for (int j = 0; j < size - 1 - i; j++)
         {
             if (arr[j] > arr[j + 1])
             {
-                // Swapping
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
@@ -51,8 +49,6 @@ int main()
     for (int i = 0; i < size - 1; i++)
     {
         int minIndex = i;
-
-        // Find the index of the minimum element in the unsorted part of the array
         for (int j = i + 1; j < size; j++)
         {
             if (arr[j] < arr[minIndex])
@@ -60,8 +56,6 @@ int main()
                 minIndex = j;
             }
         }
-
-        // Swap the found minimum element with the first element in the unsorted part
         if (minIndex != i)
         {
             int temp = arr[i];
@@ -75,5 +69,58 @@ int main()
     {
         cout << arr[i] << " ";
     }
+    cout << endl;
+
+    // Linear search
+    cout << "Enter element to be searched using linear search: ";
+    int key;
+    cin >> key;
+    for (int i = 0; i < size; i++)
+    {
+        if (key == arr[i])
+        {
+            cout << "Element found using linear search\n";
+            cout << "Present at " << i << " index in array";
+            break;
+        }
+        else
+        {
+            cout << "Element not found using linear search";
+            break;
+        }
+    }
+    cout << endl;
+
+    // Binary search
+    int key2;
+    cout << "Enter element to be searched using binary search: ";
+    cin >> key2;
+
+    int start = 0;
+    int end = size - 1;
+    while (start <= end)
+    {
+        int mid = (start + end) / 2;
+        if (key2 == arr[mid])
+        {
+            cout << "Element found using binary search\n";
+            cout << "Present at " << mid << " index in array";
+            break;
+        }
+        else if (key2 < arr[mid])
+        {
+            end = mid - 1;
+        }
+        else
+        {
+            start = mid + 1;
+        }
+    }
+
+    if (start > end)
+    {
+        cout << "Element not found using binary search\n";
+    }
+
     return 0;
 }
