@@ -46,5 +46,7 @@ int main()
         cout << arr[i] << " ";
     }
 
+    // sorting same array using selection sort
+
     return 0;
 }
