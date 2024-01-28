@@ -6,7 +6,6 @@ using namespace std;
 
 int main()
 {
-    // step - 1
     int size;
     cout << "Enter size of array: ";
     cin >> size;
@@ -17,7 +16,31 @@ int main()
     {
         cin >> arr[i];
     }
+
     cout << "Entered elements are: ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Sorting the array (bubble sort)
+    // Using nested loops for repeated comparisons and swaps
+    for (int i = 0; i < size - 1; i++)
+    {
+        for (int j = 0; j < size - 1 - i; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                // Swapping
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Sorted array using bubble sort is: ";
     for (int i = 0; i < size; i++)
     {
         cout << arr[i] << " ";
