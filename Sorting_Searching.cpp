@@ -45,8 +45,35 @@ int main()
     {
         cout << arr[i] << " ";
     }
+    cout << endl;
 
-    // sorting same array using selection sort
+    // Sorting the same array using selection sort
+    for (int i = 0; i < size - 1; i++)
+    {
+        int minIndex = i;
 
+        // Find the index of the minimum element in the unsorted part of the array
+        for (int j = i + 1; j < size; j++)
+        {
+            if (arr[j] < arr[minIndex])
+            {
+                minIndex = j;
+            }
+        }
+
+        // Swap the found minimum element with the first element in the unsorted part
+        if (minIndex != i)
+        {
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+
+    cout << "Sorted array using selection sort is: ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
     return 0;
 }
