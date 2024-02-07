@@ -53,7 +53,8 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "variant": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "stack": "cpp"
     },
     "editor.suggest.showWords": false,
     "editor.suggest.filterGraceful": false,
