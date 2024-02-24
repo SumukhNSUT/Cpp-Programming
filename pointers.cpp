@@ -34,5 +34,7 @@ int main()
     cout << "value of b is: " << *ptr1 << endl; // dereferencing the pointer
     cout << "address is: " << ptr1 << endl;
     // *ptr says give me the value that ptr is pointing to
+    // here * is dereference operator
+    // but during initialisation of pointer , * dont work as dereference operator
     return 0;
 }
