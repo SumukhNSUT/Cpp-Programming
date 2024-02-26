@@ -11,3 +11,5 @@ int main()
 // ptr points to address of num
 // ptr = address of num
 // *ptr gives value at the address block where ptr was pointing
+
+// *ptr - value at stored in ptr
