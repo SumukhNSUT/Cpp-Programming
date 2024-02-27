@@ -4,6 +4,7 @@ int main()
 {
      int arr[4] = {1, 2, 3, 4};
      cout << "Value at 0th index is: " << *(arr) << endl;
+     cout << "Value at 0th index is: " << *(&arr[0]) << endl;
      cout << "Value at 0th index is: " << arr[0] << endl;
      cout << "Address of 0th index is: " << &arr[0] << endl;
 
