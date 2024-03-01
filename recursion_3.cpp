@@ -11,8 +11,9 @@ bool isSorted(int arr[], int size)
     }
     else
     {
+        // recursive case
         if (arr[size - 1] < arr[size - 2])
-        { // Corrected the comparison
+        {
             return false;
         }
     }
@@ -33,7 +34,7 @@ int main()
     }
 
     if (isSorted(arr, size))
-    { // Corrected the function call
+    {
         cout << "The array is sorted\n";
     }
     else
