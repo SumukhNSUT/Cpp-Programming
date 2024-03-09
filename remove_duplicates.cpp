@@ -27,6 +27,7 @@ int main()
             unique_index++;
             v[unique_index] = v[i];
         }
+        continue;
     }
     cout << "Without duplicates:\n";
     for (int i = 0; i <= unique_index; i++) // loop until unique_index
