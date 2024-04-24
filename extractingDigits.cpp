@@ -1,3 +1,4 @@
+// basic code for extracting digits
 #include <iostream>
 using namespace std;
 
