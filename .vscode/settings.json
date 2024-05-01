@@ -90,4 +90,5 @@
     "editor.suggest.showValues": false,
     "editor.suggest.showVariables": false,
     "editor.suggestOnTriggerCharacters": false
+
 }
