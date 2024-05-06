@@ -16,11 +16,6 @@ public:
 
 int main()
 {
-    node *node1 = new node(10);
-
-    cout << "Data: " << node1->data << endl;
-
-    delete node1;
-
+  
     return 0;
 }
