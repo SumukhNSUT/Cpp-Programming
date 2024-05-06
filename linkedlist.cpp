@@ -1,9 +1,11 @@
+// basic concept of pointers and -> operator
 #include <iostream>
 #include <string>
 using namespace std;
 
-struct person
+class person
 {
+public:
     int age;
     string name;
 };
@@ -17,7 +19,11 @@ int main()
     p1.name = "Jacob";
 
     cout << p1.age << endl;
+
     pptr->age = 56;
-    cout << p1.age << endl;
+    (*pptr).age = 56;
+    // they both are same things
+    cout << pptr->age << endl;
+
     return 0;
 }
