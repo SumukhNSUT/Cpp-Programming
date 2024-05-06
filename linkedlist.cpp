@@ -17,5 +17,7 @@ int main()
     p1.name = "Jacob";
 
     cout << p1.age << endl;
+    pptr->age = 56;
+    cout << p1.age << endl;
     return 0;
 }
