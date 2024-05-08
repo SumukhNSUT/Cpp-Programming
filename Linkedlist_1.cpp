@@ -1,3 +1,4 @@
+// creation of a node in a linked list
 #include <iostream>
 using namespace std;
 
