@@ -1,3 +1,5 @@
+// singly linked list
+// all basic operations
 #include <iostream>
 using namespace std;
 
