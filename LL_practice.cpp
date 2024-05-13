@@ -1,3 +1,4 @@
+// NULL and nullptr are same
 #include <iostream>
 using namespace std;
 
