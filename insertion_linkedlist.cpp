@@ -49,11 +49,13 @@ void insert_at_position(Node *&head, int data, int n)
         return;
     }
 
-    // traverse upto n-1 position
+    // traverse up to n-1 position
     Node *temp = head;
-    for (int i = 1; i < n - 1 && temp != nullptr; ++i)
+    int count = 1;
+    while (temp != NULL && count < n - 1)
     {
         temp = temp->next;
+        count++;
     }
 
     // If position is out of bounds
