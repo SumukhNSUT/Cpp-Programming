@@ -1,8 +1,4 @@
-// deletion of a node at kth position in a linked list
-// case 1: at start
-// case 2: at end
-// case 3: from middle
-
+// linked list by linking nodes
 #include <iostream>
 using namespace std;
 
