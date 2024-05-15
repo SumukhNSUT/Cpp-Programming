@@ -80,9 +80,14 @@ void delete_at_position(Node *&head, int pos)
 }
 int main()
 {
+    cout << endl
+         << endl;
     cout << "Case1: Delete node at starting position(value = 10)\n";
-    cout << "Case2: Deleted node at last in new linked list formed after case 1(value = 60)\n";
+    cout << "Case2: Delete node at last in new linked list formed after case 1(value = 60)\n";
     cout << "Case3: Delete node at 1st position in new linked list after case 1 and 2(value = 30)\n";
+    cout << endl
+         << endl;
+    cout << "Intial Linked list:\n";
     Node *n1 = new Node(10);
     Node *n2 = new Node(20);
     Node *n3 = new Node(30);
