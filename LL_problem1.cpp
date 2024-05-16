@@ -1,3 +1,4 @@
+// delete alternate nodes from a linked list
 #include <iostream>
 using namespace std;
 
