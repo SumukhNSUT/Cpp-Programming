@@ -1,4 +1,3 @@
-// delete alternate nodes from a linked list
 #include <iostream>
 using namespace std;
 
@@ -68,26 +67,6 @@ int main()
     n2->next = n3;
     n3->next = n4;
     n4->next = NULL;
-
-    cout << "Initial linked list:\n";
-    display();
-    cout << endl
-         << endl;
-
-    cout << "After deletion of alternate elements:\n";
-
-    Node *temp = head;
-    int pos = 0;
-    while (temp != NULL && temp->next != NULL)
-    {
-        cout << "Deleting position: " << pos + 1 << endl;
-        delete_at_position(head, pos + 1);
-        display();
-        cout << endl;
-        temp = temp->next->next;
-        pos += 2;
-    }
-
-    cout << endl;
+    
     return 0;
 }
