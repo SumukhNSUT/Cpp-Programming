@@ -1,3 +1,4 @@
+// delete alternate elements from linked list
 #include <iostream>
 using namespace std;
 
@@ -17,11 +18,11 @@ public:
 class LinkedList
 {
 public:
-    Node *head = NULL;
-    // LinkedList()
-    // {
-    //     head = NULL;
-    // }
+    Node *head;
+    LinkedList()
+    {
+        head = NULL;
+    }
     // inserting at tail
     void insert(int value)
     {
@@ -51,6 +52,18 @@ public:
     }
 };
 
+void delete_alternate(Node *&head)
+{
+    Node *curr_node = head;
+    while (curr_node != NULL && curr_node->next != NULL)
+    {
+        Node *temp = curr_node->next; // node to be deleted
+        curr_node->next = curr_node->next->next;
+        curr_node = curr_node->next;
+        delete (temp);
+    }
+}
+
 int main()
 {
     LinkedList l;
@@ -58,7 +71,12 @@ int main()
     l.insert(2);
     l.insert(3);
     l.insert(4);
+    l.insert(5);
     l.display();
-
+    cout << endl;
+    cout << "After deleting alternate nodes:\n";
+    delete_alternate(l.head);
+    l.display();
+    cout << endl;
     return 0;
 }
