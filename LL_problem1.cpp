@@ -14,59 +14,51 @@ public:
     }
 };
 
-Node *head = NULL;
-
-void delete_at_start(Node *&head)
+class LinkedList
 {
-    Node *temp = head;
-    head = head->next;
-    delete temp;
-}
-
-void delete_at_position(Node *&head, int pos)
-{
-    if (pos == 0)
+public:
+    Node *head;
+    LinkedList()
     {
-        delete_at_start(head);
-        return;
+        head = NULL;
     }
-
-    int curr_pos = 0;
-    Node *prev = head;
-    while (curr_pos != pos - 1)
+    // inserting at tail
+    void insert(int value)
     {
-        prev = prev->next;
-        curr_pos++;
+        if (head == NULL)
+        {
+            Node *new_node = new Node(value);
+            head = new_node;
+            return;
+        }
+        Node *new_node = new Node(value);
+        Node *temp = head;
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next = new_node;
     }
-
-    Node *temp = prev->next;
-    prev->next = prev->next->next;
-    delete temp;
-}
-
-void display()
-{
-    Node *temp = head;
-    while (temp != NULL)
+    void display()
     {
-        cout << temp->data << " ";
-        temp = temp->next;
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            cout << temp->data << "->";
+            temp = temp->next;
+        }
+        cout << "NULL";
     }
-}
+};
 
 int main()
 {
-    Node *n0 = new Node(0);
-    head = n0;
-    Node *n1 = new Node(1);
-    Node *n2 = new Node(2);
-    Node *n3 = new Node(3);
-    Node *n4 = new Node(4);
-    n0->next = n1;
-    n1->next = n2;
-    n2->next = n3;
-    n3->next = n4;
-    n4->next = NULL;
-    
+    LinkedList l;
+    l.insert(1);
+    l.insert(2);
+    l.insert(3);
+    l.insert(4);
+    l.display();
+
     return 0;
 }
