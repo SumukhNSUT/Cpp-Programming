@@ -17,11 +17,11 @@ public:
 class LinkedList
 {
 public:
-    Node *head;
-    LinkedList()
-    {
-        head = NULL;
-    }
+    Node *head = NULL;
+    // LinkedList()
+    // {
+    //     head = NULL;
+    // }
     // inserting at tail
     void insert(int value)
     {
