@@ -31,7 +31,7 @@ void insert_at_head(Node *&head, int value)
     }
     temp->next = new_node; // Last node points to newly added node
     new_node->next = head; // New node points to head
-    head = new_node;       // Head is now the new node
+    head = new_node;       // bring head to new node
 }
 
 void insert_at_tail(Node *&head, int value)
