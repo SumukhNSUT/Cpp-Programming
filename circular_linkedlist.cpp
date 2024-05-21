@@ -1,5 +1,3 @@
-// circular linked list
-// same as singly linked list, just the last node points to 1st node instead of NULL
 #include <iostream>
 using namespace std;
 
@@ -15,6 +13,7 @@ public:
         next = NULL;
     }
 };
+
 void insert_at_head(Node *&head, int value)
 {
     Node *new_node = new Node(value);
@@ -25,36 +24,65 @@ void insert_at_head(Node *&head, int value)
         return;
     }
     Node *temp = head;
-    // traverse to last node
-    // last node points to newly added node in start
+    // Traverse to last node
     while (temp->next != head)
     {
         temp = temp->next;
     }
-    temp->next = new_node; // last node points to newly added node
-    new_node->next = head; // new node points to head
-    head = new_node;       // bring head to new node
+    temp->next = new_node; // Last node points to newly added node
+    new_node->next = head; // New node points to head
+    head = new_node;       // Head is now the new node
 }
+
 void insert_at_tail(Node *&head, int value)
 {
-    // if linked list empty
+    // If linked list is empty
     if (head == NULL)
     {
         insert_at_head(head, value);
+        return;
     }
     Node *new_node = new Node(value);
     Node *temp = head;
-    // traverse to last node
+    // Traverse to last node
     while (temp->next != head)
     {
         temp = temp->next;
     }
-    temp->next = new_node;
-    new_node->next = head;
+    temp->next = new_node; // Last node points to new node
+    new_node->next = head; // New node points to head
+}
+
+// Function to display linked list
+void display(Node *&head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    Node *temp = head;
+    do
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    } while (temp != head);
+    cout << endl;
 }
 
 int main()
 {
+    Node *head = NULL;
 
+    insert_at_tail(head, 1);
+    insert_at_tail(head, 2);
+    insert_at_tail(head, 3);
+    insert_at_tail(head, 4);
+    insert_at_head(head, 0);
+    insert_at_head(head, -1);
+    insert_at_head(head, -2);
+    insert_at_head(head, -3);
+    insert_at_head(head, -4);
+
+    display(head);
     return 0;
 }
