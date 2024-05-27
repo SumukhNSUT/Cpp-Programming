@@ -1,5 +1,5 @@
 {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "clang-format.executable": "/usr/local/opt/llvm/bin/clang-format",
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio",

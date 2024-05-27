@@ -3,8 +3,7 @@
 // find sum of elements in each column
 #include <iostream>
 using namespace std;
-int main()
-{
+int main() {
     int arr[3][3];
     cout << "Enter 9 elemets of 2-d array:\n";
 
