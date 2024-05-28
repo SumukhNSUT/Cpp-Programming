@@ -39,6 +39,8 @@
 	"editor.suggest.showVariables": true,
 	"editor.suggestOnTriggerCharacters": false,
 	"files.associations": {
-		"ostream": "cpp"
+		"ostream": "cpp",
+		"iostream": "cpp",
+		"stack": "cpp"
 	}
 }
