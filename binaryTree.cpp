@@ -1,4 +1,10 @@
 // creation of a tree
+// tree:
+// 1 
+// 3 5 
+// 7 11 17 
+
+// tree can be written as: 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
 #include<iostream>
 using namespace std;
 
