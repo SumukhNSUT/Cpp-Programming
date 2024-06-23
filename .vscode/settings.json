@@ -35,65 +35,19 @@
 	"editor.suggest.showVariables": true,
 
 	"files.associations": {
-		"ostream": "cpp",
-		"iostream": "cpp",
-		"stack": "cpp",
-		"__bit_reference": "cpp",
-		"__config": "cpp",
-		"__hash_table": "cpp",
-		"__locale": "cpp",
-		"__node_handle": "cpp",
-		"__split_buffer": "cpp",
-		"__threading_support": "cpp",
-		"__verbose_abort": "cpp",
-		"array": "cpp",
-		"bitset": "cpp",
-		"cctype": "cpp",
-		"charconv": "cpp",
-		"clocale": "cpp",
-		"cmath": "cpp",
-		"complex": "cpp",
-		"cstdarg": "cpp",
-		"cstddef": "cpp",
-		"cstdint": "cpp",
-		"cstdio": "cpp",
-		"cstdlib": "cpp",
-		"cstring": "cpp",
-		"ctime": "cpp",
-		"cwchar": "cpp",
-		"cwctype": "cpp",
-		"deque": "cpp",
-		"execution": "cpp",
-		"initializer_list": "cpp",
-		"ios": "cpp",
-		"iosfwd": "cpp",
-		"istream": "cpp",
-		"limits": "cpp",
-		"list": "cpp",
-		"locale": "cpp",
-		"mutex": "cpp",
-		"new": "cpp",
-		"optional": "cpp",
-		"queue": "cpp",
-		"ratio": "cpp",
-		"sstream": "cpp",
-		"stdexcept": "cpp",
-		"streambuf": "cpp",
-		"string": "cpp",
-		"string_view": "cpp",
-		"tuple": "cpp",
-		"typeinfo": "cpp",
-		"unordered_map": "cpp",
-		"variant": "cpp",
-		"vector": "cpp",
-		"algorithm": "cpp"
+		// Add your file associations as needed
+		// Example: "ostream": "cpp",
+		//           "iostream": "cpp",
+		//           ...
 	},
 
-	"C_Cpp_Runner.cCompilerPath": "/usr/bin/clang",
-	"C_Cpp_Runner.cppCompilerPath": "/usr/bin/clang++",
-	"C_Cpp_Runner.debuggerPath": "lldb",
-	"C_Cpp_Runner.cStandard": "c17",
-	"C_Cpp_Runner.cppStandard": "c++17",
+	"C_Cpp.default.compilerPath": "/usr/local/bin/gcc", // Path to GCC executable
+	"C_Cpp.default.cStandard": "c17", // C standard version
+	"C_Cpp.default.cppStandard": "c++17", // C++ standard version
+
+	"C_Cpp_Runner.cCompilerPath": "/usr/local/bin/gcc", // Path to GCC for C compilation
+	"C_Cpp_Runner.cppCompilerPath": "/usr/local/bin/g++", // Path to GCC for C++ compilation
+	"C_Cpp_Runner.debuggerPath": "lldb", // Debugger path
 
 	"C_Cpp_Runner.warnings": [
 		"-Wall",
@@ -111,8 +65,8 @@
 	"C_Cpp_Runner.warningsAsError": false,
 
 	"C_Cpp_Runner.includePaths": [
-		"/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include",
-		"/usr/local/include"
+		"/usr/local/include", // Additional include paths as needed
+		"/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
 	],
 
 	"C_Cpp_Runner.excludeSearch": [
