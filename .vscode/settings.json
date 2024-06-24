@@ -35,19 +35,16 @@
 	"editor.suggest.showVariables": true,
 
 	"files.associations": {
-		// Add your file associations as needed
-		// Example: "ostream": "cpp",
-		//           "iostream": "cpp",
-		//           ...
+		"ostream": "cpp"
 	},
 
-	"C_Cpp.default.compilerPath": "/usr/local/bin/gcc", // Path to GCC executable
-	"C_Cpp.default.cStandard": "c17", // C standard version
-	"C_Cpp.default.cppStandard": "c++17", // C++ standard version
+	"C_Cpp.default.compilerPath": "/usr/local/bin/gcc-14",
+	"C_Cpp.default.cStandard": "c17",
+	"C_Cpp.default.cppStandard": "c++17",
 
-	"C_Cpp_Runner.cCompilerPath": "/usr/local/bin/gcc", // Path to GCC for C compilation
-	"C_Cpp_Runner.cppCompilerPath": "/usr/local/bin/g++", // Path to GCC for C++ compilation
-	"C_Cpp_Runner.debuggerPath": "lldb", // Debugger path
+	"C_Cpp_Runner.cCompilerPath": "/usr/local/bin/gcc-14",
+	"C_Cpp_Runner.cppCompilerPath": "/usr/local/bin/g++-14",
+	"C_Cpp_Runner.debuggerPath": "lldb",
 
 	"C_Cpp_Runner.warnings": [
 		"-Wall",
@@ -65,7 +62,7 @@
 	"C_Cpp_Runner.warningsAsError": false,
 
 	"C_Cpp_Runner.includePaths": [
-		"/usr/local/include", // Additional include paths as needed
+		"/usr/local/include",
 		"/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
 	],
 
