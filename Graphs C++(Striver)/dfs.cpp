@@ -6,10 +6,11 @@ void dfsUtil(int node, vector<int> adj[], vector<int>& vis, vector<int>& result)
     vis[node] = 1;
     result.push_back(node);
 
-    // Traverse neighbors
-    for (int it : adj[node]) {
-        if (!vis[it]) {
-            dfsUtil(it, adj, vis, result);
+    // Traverse neighbours
+    for (int i = 0; i < adj[node].size(); i++) {
+        int neighbour = adj[node][i];
+        if (!vis[neighbour]) {
+            dfsUtil(neighbour, adj, vis, result);
         }
     }
 }
@@ -42,8 +43,8 @@ int main() {
     vector<int> result = dfsOfGraph(V, adj);
 
     // Print DFS traversal
-    for (int i : result) {
-        cout << i << " ";
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << " ";
     }
 
     return 0;
