@@ -22,13 +22,14 @@ public:
 
     void printGraph() {
         // printing adjacency list
-        for (int i = 0; i < V; ++i) {
+        for (int i = 0; i < V; i++) {
             cout << "Vertex " << i << ":";
-            for (int j : adj[i]) {
-                cout << " -> " << j;
+            for (int j = 0; j < adj[i].size(); j++) {
+                cout << " -> " << adj[i][j];
             }
             cout << endl;
         }
+
     }
 
     // 1) bfs traversal of graph
