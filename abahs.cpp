@@ -1,64 +1,70 @@
-#include <iostream>
+#include <cmath>
+#include <cstdio>
 #include <vector>
-#include <string>
-#include <sstream>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
-// Helper function to map grid positions to letters
-char getLetter(int row, int col) {
-    // A-E: row 0, F-J: row 1, ..., Z: row 5, col 0
-    int idx = row * 5 + col;
-    if (idx < 25)
-        return 'A' + idx;
-    else
-        return 'Z'; // Only (5,0) is Z
-}
+vector<vector<int>> grid;
+vector<vector<int>> paths;
+int n, target;
 
-string generateResult(vector<vector<int>>& Grid, vector<vector<int>>& instructions) {
-    string result = "";
-    for (auto& nav : instructions) {
-        int x1 = nav[0] - 1, y1 = nav[1] - 1;
-        int x2 = nav[2] - 1, y2 = nav[3] - 1;
-        // Find the starting letter (represented by 1 in the grid)
-        if (Grid[x1][y1] == 1) {
-            result += getLetter(x1, y1);
+void findPaths(int row, int col, int currentSum, vector<int>& currentPath) {
+    // Add current cell value to sum and path
+    currentSum += grid[row][col];
+    currentPath.push_back(grid[row][col]);
+
+    // If we reached bottom-right corner
+    if (row == n - 1 && col == n - 1) {
+        if (currentSum == target) {
+            paths.push_back(currentPath);
         }
-        // Traverse the path and collect letters
-        int dx = (x2 > x1) ? 1 : (x2 < x1) ? -1 : 0;
-        int dy = (y2 > y1) ? 1 : (y2 < y1) ? -1 : 0;
-        int cx = x1, cy = y1;
-        while (cx != x2 || cy != y2) {
-            cx += dx;
-            cy += dy;
-            if (Grid[cx][cy] == 1) {
-                result += getLetter(cx, cy);
-            }
-        }
+        currentPath.pop_back();
+        return;
     }
-    return result;
+
+    // Move right if possible
+    if (col + 1 < n) {
+        findPaths(row, col + 1, currentSum, currentPath);
+    }
+
+    // Move down if possible
+    if (row + 1 < n) {
+        findPaths(row + 1, col, currentSum, currentPath);
+    }
+
+    // Backtrack
+    currentPath.pop_back();
 }
 
 int main() {
-    vector<vector<int>> Grid(6, vector<int>(5));
-    for (int i = 0; i < 6; ++i)
-        for (int j = 0; j < 5; ++j)
-            cin >> Grid[i][j];
+    cin >> n;
+    grid.resize(n, vector<int>(n));
 
-    vector<vector<int>> instructions;
-    cin.ignore();
-    while (true) {
-        string line;
-        getline(cin, line);
-        if (line == "-1")
-            break;
-        stringstream ss(line);
-        vector<int> nav(4);
-        for (int i = 0; i < 4; ++i)
-            ss >> nav[i];
-        instructions.push_back(nav);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> grid[i][j];
+        }
     }
 
-    string result = generateResult(Grid, instructions);
-    cout << result << endl;
+    cin >> target;
+
+    vector<int> currentPath;
+    findPaths(0, 0, 0, currentPath);
+
+    if (paths.empty()) {
+        cout << "No path found" << endl;
+    }
+    else {
+        for (auto& path : paths) {
+            cout << "Path Found: ";
+            for (int i = 0; i < path.size(); i++) {
+                cout << path[i];
+                if (i < path.size() - 1) cout << " ";
+            }
+            cout << endl;
+        }
+    }
+
     return 0;
 }
